@@ -4,9 +4,12 @@ class BooksController < ApplicationController
   end
   
   def create
-    book= Book.new(book_params)
-    book.save
-    redirect_to book_path(book.id)
+    @book= Book.new(book_params)
+    if @book.save
+      redirect_to books_path, notice: 'Book was successflly created.'
+    else
+      render :new
+    end
   end
 
   def index
@@ -24,13 +27,20 @@ class BooksController < ApplicationController
   def update
     book= Book.find(params[:id])
     book.update(book_params)
+    flash[:notice]="Book was successflly updated."
     redirect_to book_path(book.id)
   end
     
+  def destroy
+    book= Book.find(params[:id])
+    book.destroy
+    flash[:notice]="Book was successflly destroyed."
+    redirect_to '/books'
+  end
   
   private
   
   def book_params
-    params.require(:book).permit(:"本のタイトル",:"感想")
+    params.permit(:"本のタイトル",:"感想")
   end
 end
