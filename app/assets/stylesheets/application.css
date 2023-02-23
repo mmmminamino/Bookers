@@ -62,6 +62,7 @@ th{
   text-align:center;
 }
 
+
 tr{
   display:table-row;
   vertical-align: inherit;
@@ -82,8 +83,16 @@ td{
   padding-left:5px;
   padding-right:5px;
   margin:33px;
+  color:black;
 }
 
+.book_title{
+  display:table-cell;
+}
+
+.book_kansou{
+  display:table-cell;
+}
 tbody{
   display:table-row-group;
   vertical-align: middle;
