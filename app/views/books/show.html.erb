@@ -20,6 +20,7 @@
 <h2>感想</h2>
 <P><%= @book.感想 %></P>
 <%= link_to "Edit", edit_book_path(@book.id) %>
+<%= link_to "Back", '/books' %>
 <%= link_to "Destroy", destroy_book_path(@book.id), method: :delete, "data-confirm"=>"Are you sure?" %>
 
 </body>
