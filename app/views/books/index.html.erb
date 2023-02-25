@@ -30,14 +30,16 @@
             <span><%= link_to book.title, book_path(book.id) %></span>
           <%end%>
         </td>
+        
         <td class=book_kansou>
           <% @books.each do |book| %>
             <span><%= link_to book.body, book_path(book.id) %></span>
           <%end%> 
         </td>
-        <td><%= link_to "閲覧", book_path(book.id) %></td>
-        <td><%= link_to "編集", edit_book_path(@book) %></td>
-        <td><%= link_to "削除", book_path(book.id) , method: :delete %></td>
+        
+        <td><a class="show_12345" href="/books/12345">閲覧</a></td>
+        <td><a class="edit_12345" href="/books/.id/edit">編集</a></td>
+        <td><a data-confirm="Are you Sure?" class="destroy_12345" rel="nofollow" data-method="delete" href="/books/12345">削除</a></td>
       </tr>
         
       <tr>
