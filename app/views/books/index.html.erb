@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta name="csrf-param" content="authenticity_token">
-    <link rel="stylesheet" href="application.css" />
+    <link rel="stylesheet" media="all" data-turbolinks-track="reload">
     <title>新規投稿画面</title>
   </head>
 </html>
@@ -37,9 +37,9 @@
           <%end%> 
         </td>
         
-        <td><a class="show_12345" href="/books/12345">閲覧</a></td>
-        <td><a class="edit_12345" href="/books/.id/edit">編集</a></td>
-        <td><a data-confirm="Are you Sure?" class="destroy_12345" rel="nofollow" data-method="delete" href="/books/12345">削除</a></td>
+        <td><a href=book_path(book.id)>閲覧</a></td>
+        <td><a href=edit_book_path(book.id)>編集</a></td>
+        <td><a data-confirm="Are you Sure?" rel="nofollow" data-method="delete" href=destroy_book_path(book.id)>削除</a></td>
       </tr>
         
       <tr>
